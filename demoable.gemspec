@@ -7,11 +7,11 @@ require "demoable/version"
 Gem::Specification.new do |s|
   s.name        = "demoable"
   s.version     = Demoable::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Demoable."
-  s.description = "TODO: Description of Demoable."
+  s.authors     = ["Mark Lohstroh"]
+  s.email       = ["mlohstroh@gmail.com"]
+  s.homepage    = "https://github.com/thebinaryhood/demoable"
+  s.summary     = "A rails engine that locks down application based on the environment for demo purposes"
+  s.description = "A rails engine that locks down application based on the environment for demo purposes"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
