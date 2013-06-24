@@ -5,9 +5,15 @@ module Demoable
     validates :requester, :presence => true
     validates :email, :presence => true
     validates :duration, :presence => true
+    validates :start_time, :presence => true
+
     validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
     before_save :set_default_values
+
+    def approve_code
+      self.approved = true
+    end
 
     private
       def set_default_values

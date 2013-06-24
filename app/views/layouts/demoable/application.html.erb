@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Demoable</title>
-  <%= stylesheet_link_tag    "demoable/application", :media => "all" %>
-  <%= javascript_include_tag "demoable/application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+	  <title>Demoable</title>
+	  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	  <%= stylesheet_link_tag    "demoable/application", :media => "all" %>
+	  <%= javascript_include_tag "demoable/application" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div class="containter">
+			<%= yield %>
+		</div>
+	</body>
 </html>
