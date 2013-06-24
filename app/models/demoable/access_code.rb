@@ -2,7 +2,7 @@ module Demoable
   class AccessCode < ActiveRecord::Base
     attr_accessible :approved, :code, :duration, :email, :requester, :start_time
 
-    validates :code, :uniqueness => true
+    # validates :code, :uniqueness => true
     validates :requester, :presence => true
     validates :email, :presence => true
     validates :duration, :presence => true

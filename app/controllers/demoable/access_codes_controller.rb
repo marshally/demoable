@@ -26,13 +26,15 @@ module Demoable
         @access_code = AccessCode.find_by_code(params[:access_code])
         if @access_code
             if @access_code.approved
-                if DateTime.now >= @access_code.start_date
-                    if DateTime.now > @access_code.start_date + @access_code.duration_in_seconds
+                if DateTime.now >= @access_code.start_time
+                    if DateTime.now < @access_code.start_time + @access_code.duration_in_seconds
                         #and NOW we can use sign in using this code
-                        cookie[:demoable] = {
+                        cookies[:demoable] = {
                             :value => @access_code.code, 
                             :expires => Time.now + @access_code.duration_in_seconds 
                         }
+                        flash[:notice] = "Demo away!"
+                        redirect_to main_app.root_path
                     else
                         #code has expired
                         flash[:error] = "The code you are using has expired"
@@ -66,9 +68,12 @@ module Demoable
     end
     def create
         @access_code = AccessCode.new(params[:access_code])
+        @access_code.start_time = DateTime.strptime(params[:access_code][:start_time], "%m/%d/%Y")
         if @access_code.save
             redirect_to access_codes_path
         else
+            puts "#{@access_code.errors.inspect}"
+            redirect_to new_access_code_path
             #errors
         end
     end
