@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "A rails engine that locks down application based on the environment for demo purposes"
   s.description = "A rails engine that locks down application based on the environment for demo purposes"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.13"
