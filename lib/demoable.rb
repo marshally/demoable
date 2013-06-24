@@ -10,14 +10,4 @@ module Demoable
 
   mattr_accessor :admin_password
   @@admin_password = "password needs changing"
-
-  def check_demoable
-    puts cookies
-
-    if !cookies[:demoable]
-      redirect_to "/demoable"
-    else
-      puts cookies[:demoable]
-    end
-  end
 end
