@@ -1,2 +1,21 @@
-<h1>AccessCodes#index</h1>
-<p>Find me in app/views/demoable/access_codes/index.html.erb</p>
+<h1>All Access Codes</h1>
+
+<table id="table" class="table table-bordered table-striped">
+
+  <thead>
+    <th>Code</th>
+    <th>Requester</th>
+    <th>Approved</th>
+  </thead>
+  <tbody>
+    <% @access_codes.each do |code| %>
+      <tr>
+        <td><%= code.code %></td>
+        <td><%= code.requester %></td>
+        <td><%= code.approved ? "Yes" : "No" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Request New Code", new_access_code_path %>
