@@ -6,8 +6,11 @@ module Demoable
   end
 
   mattr_accessor :admin_user
-  @@admin_user = "admin"
+  @@admin_user = 'admin'
 
   mattr_accessor :admin_password
-  @@admin_password = "password needs changing"
+  @@admin_password = 'password needs changing'
+
+  mattr_accessor :demo_environment
+  @@demo_environment = 'qa'
 end
