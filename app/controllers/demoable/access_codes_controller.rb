@@ -2,6 +2,10 @@ require_dependency "demoable/application_controller"
 
 module Demoable
   class AccessCodesController < ApplicationController
+    def login
+
+    end
+
     def index
     	@access_codes = AccessCode.all
     end
@@ -17,7 +21,7 @@ module Demoable
         if @access_code.save
             redirect_to access_codes_path
         else
-
+            #errors
         end
     end
   end

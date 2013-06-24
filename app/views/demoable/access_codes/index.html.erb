@@ -5,17 +5,19 @@
   <thead>
     <th>Code</th>
     <th>Requester</th>
-    <th>Approved</th>
+    <th>Email</th>
     <th>Actions</th>
   </thead>
   <tbody>
     <% @access_codes.each do |code| %>
-      <tr>
-        <td><%= link_to code.code, access_code_path(code) %></td>
-        <td><%= code.requester %></td>
-        <td><%= code.approved ? "Yes" : "No" %></td>
-        <td><%= link_to "Approve", '#' %> | <%= link_to "Decline", '#' %></td>
-      </tr>
+      <% if !code.approved %>
+        <tr>
+          <td><%= link_to code.code, access_code_path(code) %></td>
+          <td><%= code.requester %></td>
+          <td><%= code.email %></td>
+          <td><%= link_to "Approve", '#' %> | <%= link_to "Decline", '#' %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
