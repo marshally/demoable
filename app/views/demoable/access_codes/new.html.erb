@@ -1,0 +1,23 @@
+<script>
+  var jq = $.noConflict();
+  $(function() {
+    $('#access_code_start_time').datepicker();
+  });
+</script>
+
+<h1>Request a Code here</h1>
+</br>
+<%= form_for(@access_code) do |f| %>
+  <div class="field">
+    <%= f.label :requester %>
+    <%= f.text_field :requester, :placeholder => "Requester" %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, :placeholder => "Email" %>
+  </div>
+  <div class="field">
+    Start Date</br>
+    <%= f.text_field :start_time %>
+  </div>
+<% end %>
