@@ -1,4 +1,4 @@
-Demo.setup do |d|
+Demoable.setup do |d|
   d.admin_user = "admin"
   d.admin_password = "password"
 end
