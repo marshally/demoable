@@ -2,6 +2,11 @@
   var jq = $.noConflict();
   $(function() {
     $('#access_code_start_time').datepicker();
+    $('#end_date').datepicker();
+
+    $('#duration').change(function() {
+      $('#range_val').text($(this).val());
+    });
   });
 </script>
 
@@ -18,6 +23,13 @@
   </div>
   <div class="field">
     Start Date</br>
-    <%= f.text_field :start_time %>
+    <%= f.text_field :start_time, :placeholder => "XX/XX/XXXX" %>
   </div>
+
+  Duration</br>
+  <%= range_field_tag "duration", 1, :min => 1, :max => 10 %>
+  <span id="range_val">1</span> day(s)
+  </br>
+  </br>
+  <%= f.submit "Request code" , :class => 'btn'%>
 <% end %>
