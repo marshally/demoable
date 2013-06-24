@@ -1,0 +1,7 @@
+<center>
+  <h3>Login Form</h3>
+  <%= form_tag(demoable.signin_path) do %>
+    <%= text_field_tag :access_code, nil, :placeholder => "Access Code", :class => 'input-xxlarge' %></br>
+    <%= submit_tag "Login", :class => 'btn' %>
+  <% end %>
+</center>

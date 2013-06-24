@@ -15,11 +15,11 @@
           <td><%= link_to code.code, access_code_path(code) %></td>
           <td><%= code.requester %></td>
           <td><%= code.email %></td>
-          <td><%= link_to "Approve", '#' %> | <%= link_to "Decline", '#' %></td>
+          <td><%= link_to "Approve", demoable.access_codes_approve_path(code) %> | <%= link_to "Decline", '#' %></td>
         </tr>
       <% end %>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "Request New Code", new_access_code_path %>
+<%= link_to "Request New Code", demoable.new_access_code_path %>

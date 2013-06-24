@@ -16,6 +16,10 @@ module Demoable
       self.approved = true
     end
 
+    def duration_in_seconds
+      self.duration.days.to_i
+    end
+
     private
       def set_default_values
         self.approved = false unless self.approved
