@@ -8,7 +8,7 @@ module Demoable
 
     def approve
         @access_code = AccessCode.find(params[:id])
-        @access_code.approve
+        @access_code.approve_code
         if @access_code.save
             flash[:notice] = "Access Code was approved!"
             redirect_to demoable.root_path
