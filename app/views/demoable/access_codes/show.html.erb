@@ -1,0 +1,19 @@
+<h1>Access Code Request</h1>
+</br>
+<p>
+  <b>Requester: </b>
+  <%= @access_code.requester %></br>
+  <b>Email: </b>
+  <%= @access_code.email %></br>
+  <b>Start Day: </b>
+  <%= @access_code.start_time.strftime("%D") %></br>
+  <b>Duration: </b>
+  <%= @access_code.duration %> day(s)</br>
+  <b>Approval Status: </b>
+  <%= @access_code.approved ? "Yes" : "No" %>
+</p>
+
+<% if !@access_code.approved %>
+  <h2>Actions</h2>
+  <%= link_to "Approve" %> | <%= link_to "Decline" %>
+<% end %>

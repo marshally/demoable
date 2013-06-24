@@ -6,13 +6,15 @@
     <th>Code</th>
     <th>Requester</th>
     <th>Approved</th>
+    <th>Actions</th>
   </thead>
   <tbody>
     <% @access_codes.each do |code| %>
       <tr>
-        <td><%= code.code %></td>
+        <td><%= link_to code.code, access_code_path(code) %></td>
         <td><%= code.requester %></td>
         <td><%= code.approved ? "Yes" : "No" %></td>
+        <td><%= link_to "Approve", '#' %> | <%= link_to "Decline", '#' %></td>
       </tr>
     <% end %>
   </tbody>

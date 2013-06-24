@@ -12,5 +12,13 @@ module Demoable
     def new
     	@access_code = AccessCode.new
     end
+    def create
+        @access_code = AccessCode.new(params[:access_code])
+        if @access_code.save
+            redirect_to access_codes_path
+        else
+
+        end
+    end
   end
 end
