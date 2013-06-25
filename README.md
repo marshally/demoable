@@ -27,4 +27,9 @@ Now you need to mount the rails engine in your routes.rb file.
 
 	mount Demoable::Engine, :at => '/demoable'
 	
+Then add these two lines to the top of your application controller or any specific controller you want to lock down.
+	
+	include Demoable::ApplicationHelper
+	before_filter :check_demoable
+	
 
