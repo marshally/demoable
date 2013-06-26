@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    demoable (0.0.1)
+    demoable (0.1.0)
       rails (~> 3.2.13)
 
 GEM

@@ -28,3 +28,9 @@ Now you need to mount the rails engine in your routes.rb file.
 	mount Demoable::Engine, :at => '/demoable'
 	
 
+#TODO
+
+- Mailers for the approval code
+- A JSON api to do the following
+	- Login in with code from other server
+	- Get all the code models from the endpoint
