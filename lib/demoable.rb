@@ -13,4 +13,7 @@ module Demoable
 
   mattr_accessor :demo_environment
   @@demo_environment = 'qa'
+
+  mattr_accessor :access_code_length
+  @@access_code_length = 10
 end

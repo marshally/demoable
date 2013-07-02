@@ -23,7 +23,7 @@ module Demoable
     private
       def set_default_values
         self.approved = false unless self.approved
-        self.code = (0...50).map{ ('a'..'z').to_a[rand(26)] }.join unless self.code
+        self.code = (0...access_code_length).map{ ('a'..'z').to_a[rand(26)] }.join unless self.code
       end
   end
 end

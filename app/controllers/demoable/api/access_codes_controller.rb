@@ -2,6 +2,11 @@ require_dependency "demoable/api/application_controller"
 
 module Demoable
   class Api::AccessCodesController < ApplicationController
-    respond_to :json
+    def index
+      render json: { :message => "Hello World!" }
+    end
+    def create
+      
+    end
   end
 end

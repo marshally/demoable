@@ -4,5 +4,9 @@ Demoable::Engine.routes.draw do
   match '/access_codes/:id/approve' => 'access_codes#approve', :as => :access_codes_approve
   resources :access_codes
 
+  namespace :api do
+    resources :access_codes
+  end
+
   root :to => 'access_codes#index'
 end
